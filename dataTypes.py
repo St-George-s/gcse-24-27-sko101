@@ -34,13 +34,12 @@ input1 = input("Enter a number: ")
 input1AsAnInt = int(input1)
 input2 = input("Enter another number: ")
 input2AsAnInt = int(input2)
-print(str(input1AsAnInt) + " multiplied " + str(input2AsAnInt) + " = ")
-print(input1AsAnInt * input2AsAnInt)
+print(str(input1AsAnInt) + " multiplied " + str(input2AsAnInt) + " = " + str(input1AsAnInt * input2AsAnInt))
 
 # Activity 2 - Input user's age, output age times 7
 inputUsersAge = input("Enter your age: ")
 inputUsersAgeAsAnInt = int(inputUsersAge)
-print(str(inputUsersAge) + " multiplied by 7 =")
-print(inputUsersAgeAsAnInt * 7)
+print(str(inputUsersAge) + " multiplied by 7 = " + str(inputUsersAgeAsAnInt * 7))
+
 
 # Activity 3 - Take radius as input, output volume of sphere (v = 4/3 x pi x r^3)
