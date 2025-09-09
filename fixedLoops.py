@@ -86,12 +86,46 @@
 # Prints the chosen times table up to the number given. 
 # Then asks the user if they would like to see another times table and repeats until they type no.      
 
-timesTable = int(input("Enter the times table you would like to see: "))
-howFarItShouldGo = int(input("Enter how far it should go: "))
-print("This is the " + str(timesTable) + " times table.")
-for counter1 in range(1, howFarItShouldGo + 1):
-    print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1))
+# #attempt 1
 
-wouldLikeToContinue = bool(input("Would you like to do another one? "))
+# timesTable = int(input("Enter the times table you would like to see: "))
+# howFarItShouldGo = int(input("Enter how far it should go: "))
+# print("This is the " + str(timesTable) + " times table.")
+# for counter1 in range(1, howFarItShouldGo + 1):
+#     print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1) + ".")
 
-print(wouldLikeToContinue)
+
+#attempt 2
+
+counter33 = 2
+for counterfull in range(counter33):
+    timesTable = int(input("Enter the times table you would like to see: "))
+    howFarItShouldGo = int(input("Enter how far it should go: "))
+    print("This is the " + str(timesTable) + " times table.")
+    for counter1 in range(1, howFarItShouldGo + 1):
+        print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1) + ".")
+    wouldLikeToContinue = input("Would you like to do another one? Input Yes or No: ")
+    if wouldLikeToContinue == "No":
+        print("Goodbye! ")
+        counter33 = 0
+    if wouldLikeToContinue == "Yes":
+        print("Ok.")
+        counter33 = 2
+    
+
+
+#attempt 2 working
+# for counter8 in range(2):
+
+
+
+
+# #ignore (also attempt 1) (if True did not work)
+# wouldLikeToContinue = bool(input("Would you like to do another one? "))
+# if "yes":
+#     timesTable = int(input("Enter the times table you would like to see: "))
+#     howFarItShouldGo = int(input("Enter how far it should go: "))
+#     for counter in range(1, howFarItShouldGo + 1):
+#         print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1) + ".")
+# if "no":
+#     print("Have a nice day! Thank you for using Alina's calculator.")
