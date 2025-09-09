@@ -57,6 +57,30 @@ radius = float(input("Enter a radius: "))
 print(4/3 * math.pi * radius ** 3)
 
 
-
+# teachers
 
 number1 = float(input("Enter Number: "))
+
+# 1. Two inputs multiply 
+
+number1 = float(input("Enter Number: ")) 
+
+number2 = float(input("Enter Number: ")) 
+
+print(number1, " X ", number2 , " = ", number1 * number2) 
+
+ 
+
+# 2. Dog age 
+
+humanAge = int(input("Enter age: ")) 
+
+print("Dog age is ", humanAge * 7) 
+
+ 
+
+# 3. Volume of sphere 
+
+radius = float(input("Enter radius: ")) 
+
+print("Volume of sphere with radius ", radius, " is ", 4/3 * 3.14159 * radius ** 3) 
