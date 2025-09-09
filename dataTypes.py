@@ -43,3 +43,20 @@ print(str(inputUsersAge) + " multiplied by 7 = " + str(inputUsersAgeAsAnInt * 7)
 
 
 # Activity 3 - Take radius as input, output volume of sphere (v = 4/3 x pi x r^3)
+inputRadius = input("Enter a radius to find the volume of a sphere: ")
+inputRadiusAsAnInt = int(inputRadius)
+import math
+print("Volume = 4 / 3 * pi * " + inputRadius + " to the power of 3 ")
+print("Volume = " + str(4/3 * math.pi * (inputRadiusAsAnInt ** 3)))
+
+# It is better to turn numbers into floats instead of integers e.g. number1 = float(input("Enter a number: ")) as using an integer means that you would not have any decimals.
+# I just turned the numbers into integers above.
+# For example, if you did the last question again but changed the radius to a float instead of an integer, it would look like this:
+
+radius = float(input("Enter a radius: "))
+print(4/3 * math.pi * radius ** 3)
+
+
+
+
+number1 = float(input("Enter Number: "))
