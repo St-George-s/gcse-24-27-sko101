@@ -95,22 +95,47 @@
 #     print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1) + ".")
 
 
-#attempt 2
+# #attempt 2
 
-counter33 = 2
-for counterfull in range(counter33):
-    timesTable = int(input("Enter the times table you would like to see: "))
-    howFarItShouldGo = int(input("Enter how far it should go: "))
-    print("This is the " + str(timesTable) + " times table.")
-    for counter1 in range(1, howFarItShouldGo + 1):
-        print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1) + ".")
-    wouldLikeToContinue = input("Would you like to do another one? Input Yes or No: ")
-    if wouldLikeToContinue == "No":
-        print("Goodbye! ")
-        counter33 = 0
-    if wouldLikeToContinue == "Yes":
-        print("Ok.")
-        counter33 = 2
+# counter33 = 2
+# for counter32 in range(counter33):
+#     timesTable = int(input("Enter the times table you would like to see: "))
+#     howFarItShouldGo = int(input("Enter how far it should go: "))
+#     print("This is the " + str(timesTable) + " times table.")
+#     for counter1 in range(1, howFarItShouldGo + 1):
+#         print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1) + ".")
+#     wouldLikeToContinue = input("Would you like to do another one? Input Yes or No: ")
+#     if wouldLikeToContinue == "No":
+#         print("Goodbye! ")
+#         counter33 = counter33 - 3
+#     if wouldLikeToContinue == "Yes":
+#         print("Ok.")
+#         counter33 = counter33 + 1 
+
+# #attempt 2bb
+
+# three = 3
+# counter34 = 1
+# for counter34 in range(counter34):
+#     counter33 = 1
+#     for counter32 in range(counter33):
+#         timesTable = int(input("Enter the times table you would like to see: "))
+#         howFarItShouldGo = int(input("Enter how far it should go: "))
+#         print("This is the " + str(timesTable) + " times table.")
+#         for counter1 in range(1, howFarItShouldGo + 1):
+#             print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1) + ".")
+#         wouldLikeToContinue = input("Would you like to do another one? Input Yes or No: ")
+#         if wouldLikeToContinue == "No":
+#             print("Goodbye! ")
+#             counter34 = counter33 - three
+#             counter33 = counter34 - three
+#         if wouldLikeToContinue == "Yes":
+#             print("Ok.")
+#             counter34 = counter33 + three
+#             counter33 = counter34 + three
+
+
+
     
 
 
@@ -129,3 +154,4 @@ for counterfull in range(counter33):
 #         print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1) + ".")
 # if "no":
 #     print("Have a nice day! Thank you for using Alina's calculator.")
+
