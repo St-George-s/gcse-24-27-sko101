@@ -77,7 +77,7 @@
 for counter1 in range(1, 13):
     print("This is the " + str(counter1) + " times table.")
     for counter2 in range(1, 13):
-        print(str(counter1) + " * " + str(counter2) + " = " + str(counter1 * counter2))
+        print(str(counter2) + " * " + str(counter1) + " = " + str(counter1 * counter2))
 
 
 # Extension task: Write a Python program that: 
