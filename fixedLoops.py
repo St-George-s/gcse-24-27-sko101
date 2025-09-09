@@ -72,12 +72,12 @@
 # print(total)
 
 
-# Question 10: Write a Python program to output the 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, and 12 times tables from 1 to 12. 
+# # Question 10: Write a Python program to output the 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, and 12 times tables from 1 to 12. 
         
-for counter1 in range(1, 13):
-    print("This is the " + str(counter1) + " times table.")
-    for counter2 in range(1, 13):
-        print(str(counter2) + " * " + str(counter1) + " = " + str(counter1 * counter2))
+# for counter1 in range(1, 13):
+#     print("This is the " + str(counter1) + " times table.")
+#     for counter2 in range(1, 13):
+#         print(str(counter2) + " * " + str(counter1) + " = " + str(counter1 * counter2))
 
 
 # Extension task: Write a Python program that: 
@@ -85,3 +85,13 @@ for counter1 in range(1, 13):
 # Asks the user how far the table should go (e.g. up to 20). 
 # Prints the chosen times table up to the number given. 
 # Then asks the user if they would like to see another times table and repeats until they type no.      
+
+timesTable = int(input("Enter the times table you would like to see: "))
+howFarItShouldGo = int(input("Enter how far it should go: "))
+print("This is the " + str(timesTable) + " times table.")
+for counter1 in range(1, howFarItShouldGo + 1):
+    print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1))
+
+wouldLikeToContinue = bool(input("Would you like to do another one? "))
+
+print(wouldLikeToContinue)
