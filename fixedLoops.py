@@ -155,3 +155,46 @@
 # if "no":
 #     print("Have a nice day! Thank you for using Alina's calculator.")
 
+
+# # More stuff
+# yesOrNo = input("Enter Yes or No: ")
+# if yesOrNo == "Yes":
+#     print("You said Yes, correct?")
+# elif yesOrNo == "No":
+#     print("You said No, correct?")
+# else:
+#     print("You didn't do it, did you?")
+
+
+# for counter1 in range(3):
+#     yesOrNo2 = input("Enter Yes or No: ")
+#     if yesOrNo2 == "Yes":
+#         timesTable = int(input("Enter the times table: "))
+#         howFarItShouldGo = int(input("How far should it go? "))
+#         print("This is the " + str(timesTable) + " times table.")
+#         for counter in range(1, howFarItShouldGo + 1):
+#             print(str(counter) + " times " + str(timesTable) + " equals " + str(timesTable * counter))
+#     elif yesOrNo2 == "No":
+#         print("Sure thing.")
+#     else:
+#         print("I asked you to do one thing...")
+
+
+userSaysNo = input("Please Yes or No to begin: ")
+for counter3 in range(1):
+    if userSaysNo == "Yes":
+        for counter1 in range(1):
+            yesOrNo2 = input("Enter Yes or No: ")
+            if yesOrNo2 == "Yes":
+                print("work pleaseeeee")
+                userSaysNo = input("Enter Yes or No: ")
+            elif yesOrNo2 == "No":
+                print("Sure thing.")
+            else:
+                print("I asked you to do one thing...")
+    elif userSaysNo == "No":
+        print("Okay then, have a nice day!")
+
+
+
+
