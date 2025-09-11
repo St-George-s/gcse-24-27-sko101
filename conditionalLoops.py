@@ -118,7 +118,8 @@
 # extra check balance function because it is an ATM and so otherwise how would you use it as well as accounts, passwords, transferring money across accounts and also log out
 
 # Accounts: muskarasAcc90, EFFBSIHHHHHHSCCCOBRB21_100, fifisAcc110
-
+# Passwords: 90code, 100code, 110code
+# Starting balances: 90, 100, 110
 
 
 print("Welcome to Alina's ATM.")
