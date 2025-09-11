@@ -99,22 +99,18 @@
 # extra check balance function because it is an ATM and so otherwise how would you use it
 
 dWQ = "yay"
-dWQ = input("Do you want to Deposit, Withdraw, Quit, or Check Balance? ")
 while dWQ != "Quit":
+    dWQ = input("Do you want to Deposit, Withdraw, Quit, or Check Balance? ")
     balance = 100
-    while dWQ == "Deposit":
+    if dWQ == "Deposit":
         howMuchDeposit = input("How much do you want to deposit? ")
         balance = int(balance) + int(howMuchDeposit)
-        dWQ = input("Do you want to Deposit, Withdraw, Quit, or Check Balance? ")
-    while dWQ == "Withdraw":
+    if dWQ == "Withdraw":
         howMuchWithdraw = input("How much do you want to withdraw? ")
         balance = int(balance) - int(howMuchWithdraw)
         if balance < 0:
             print("You do not have enough money. ")
             balance = int(balance) + int(howMuchWithdraw)
-        dWQ = input("Do you want to Deposit, Withdraw, Quit, or Check Balance? ")
-    while dWQ == "Check Balance":
+    if dWQ == "Check Balance":
         print("Your balance is " + str(balance) + ". ")
-        dWQ = input("Do you want to Deposit, Withdraw, Quit, or Check Balance? ")
-if dWQ == "Quit":
-    print("Thank you for using Alina's ATM. Have a nice day!")
+print("Thank you for using Alina's ATM. Have a nice day!")
