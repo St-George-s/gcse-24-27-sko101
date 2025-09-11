@@ -115,13 +115,13 @@
 # print("Thank you for using Alina's ATM. Have a nice day!")
 
 
-# extra check balance function because it is an ATM and so otherwise how would you use it as well as accounts, passwords and sending each other money and also log out
+# extra check balance function because it is an ATM and so otherwise how would you use it as well as accounts, passwords, transferring money across accounts and also log out
 
 # Accounts: muskarasAcc90, EFFBSIHHHHHHSCCCOBRB21_100, fifisAcc110
 
-logoutter = "logIn"
-while logoutter == "logda
-    print("Welcome to Alina's ATM.")
+
+
+print("Welcome to Alina's ATM.")
 
 muskarasAcc90balance = 90
 EFFBSIHHHHHHSCCCOBRB21_100balance = 100
@@ -131,6 +131,7 @@ fifisAcc110balance = 110
 account = input("Enter a username: ")
 if account == "muskarasAcc90":
     balance = muskarasAcc90balance 
+    user = "Muskaan"
     muskarasAcc90code = input("Enter your passcode: ")
     while muskarasAcc90code != "90code":
         balance = muskarasAcc90balance
@@ -138,12 +139,14 @@ if account == "muskarasAcc90":
         muskarasAcc90code = input("Enter your passcode: ")
 if account == "EFFBSIHHHHHHSCCCOBRB21_100":
     balance = EFFBSIHHHHHHSCCCOBRB21_100balance
+    user = "Elizabeth"
     EFFBSIHHHHHHSCCCOBRB21_100code = input("Enter your passcode: ")
     while EFFBSIHHHHHHSCCCOBRB21_100code != "100code":
         print("Password is incorrect. ")
         EFFBSIHHHHHHSCCCOBRB21_100code = input("Enter your passcode. ")
 if account == "fifisAcc110":
     balance = fifisAcc110balance
+    user = "Alina"
     fifisAcc110code = input("Enter your passcode: ")
     while fifisAcc110code != "110code":
         print("Password is incorrect. ")
@@ -153,7 +156,7 @@ print("Password accepted. ")
 
 dWQ = "it doesn't really matter what I write here"
 while dWQ != "Quit":
-    dWQ = input("Do you want to Deposit, Withdraw, Quit, Check Balance, or Log Out? ")
+    dWQ = input("Do you want to Deposit, Withdraw, Quit, Check Balance, Log Out, or Transfer? ")
     if dWQ == "Deposit":
         howMuchDeposit = input("How much do you want to deposit? ")
         balance = int(balance) + int(howMuchDeposit)
@@ -167,6 +170,81 @@ while dWQ != "Quit":
         print("Your balance is " + str(balance) + ". ")
     if dWQ == "Log Out":
         print("Thank you for using Alina's ATM. Have a nice day!")
-    if dWQ == "Quit":
-        logoutter = "logOut"
+        if user == "Muskaan":
+            muskarasAcc90balance = balance
+        if user == "Elizabeth":
+            EFFBSIHHHHHHSCCCOBRB21_100balance = balance
+        if user == "Alina":
+            fifisAcc110balance = balance
+        account = input("Enter a username: ")
+        if account == "muskarasAcc90":
+            balance = muskarasAcc90balance 
+            user = "Muskaan"
+            muskarasAcc90code = input("Enter your passcode: ")
+            while muskarasAcc90code != "90code":
+                balance = muskarasAcc90balance
+                print("Password is incorrect. ")
+                muskarasAcc90code = input("Enter your passcode: ")
+        if account == "EFFBSIHHHHHHSCCCOBRB21_100":
+            balance = EFFBSIHHHHHHSCCCOBRB21_100balance
+            user = "Elizabeth"
+            EFFBSIHHHHHHSCCCOBRB21_100code = input("Enter your passcode: ")
+            while EFFBSIHHHHHHSCCCOBRB21_100code != "100code":
+                print("Password is incorrect. ")
+                EFFBSIHHHHHHSCCCOBRB21_100code = input("Enter your passcode. ")
+        if account == "fifisAcc110":
+            balance = fifisAcc110balance
+            user = "Alina"
+            fifisAcc110code = input("Enter your passcode: ")
+            while fifisAcc110code != "110code":
+                print("Password is incorrect. ")
+                fifisAcc110code = input("Enter your passcode: ")
+        print("Password accepted. ")
+    if dWQ == "Transfer":
+        howMuchToTransfer = input("How much would you like to transfer? ")
+        toWhomShouldItBeTransferred = input("To whom should it be transferred? ")
+        balance = int(balance) - int(howMuchToTransfer) 
+        if toWhomShouldItBeTransferred == "muskarasAcc90":
+            muskarasAcc90balance = int(muskarasAcc90balance) + int(howMuchToTransfer)
+            if balance < 0:
+                print("You do not have enough money. ")
+                muskarasAcc90balance = int(muskarasAcc90balance) - int(howMuchToTransfer)
+                balance = int(balance) + int(howMuchToTransfer)
+        if toWhomShouldItBeTransferred == "EFFBSIHHHHHHSCCCOBRB21_100":
+            EFFBSIHHHHHHSCCCOBRB21_100balance = int(EFFBSIHHHHHHSCCCOBRB21_100balance) + int(EFFBSIHHHHHHSCCCOBRB21_100balance)
+            if balance < 0:
+                print("You do not have enough money. ")
+                EFFBSIHHHHHHSCCCOBRB21_100balance = int(EFFBSIHHHHHHSCCCOBRB21_100balance) - int(EFFBSIHHHHHHSCCCOBRB21_100balance)
+                balance = int(balance) + int(howMuchToTransfer)
+        if toWhomShouldItBeTransferred == "fifisAcc110":
+            fifisAcc110balance = int(fifisAcc110balance) + int(fifisAcc110balance)
+            if balance < 0:
+                print("You do not have enough money. ")
+                fifisAcc110balance = int(fifisAcc110balance) - int(fifisAcc110balance)
+                balance = int(balance) + int(howMuchToTransfer)
+        
+
 print("Thank you for using Alina's ATM. Have a nice day!")
+
+
+
+
+
+
+
+# fix: when you type in a number it gets confused
+
+
+
+
+
+#transfer prototype
+
+# if dWQ == "Transfer":
+#         howMuchToTransfer = input("How much would you like to transfer? ")
+#         toWhomShouldItBeTransferred = input("To whom should it be transferred? ")
+#         if toWhomShouldItBeTransferred == "muskarasAcc90":
+#             muskarasAcc90balance = int(muskarasAcc90balance) + int(howMuchToTransfer)
+#         if balance < 0:
+#             print("You do not have enough money. ")
+#             balance = int(muskarasAcc90balance) + int(howMuchToTransfer)
