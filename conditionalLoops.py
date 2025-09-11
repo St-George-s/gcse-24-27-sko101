@@ -211,16 +211,16 @@ while dWQ != "Quit":
                 muskarasAcc90balance = int(muskarasAcc90balance) - int(howMuchToTransfer)
                 balance = int(balance) + int(howMuchToTransfer)
         if toWhomShouldItBeTransferred == "EFFBSIHHHHHHSCCCOBRB21_100":
-            EFFBSIHHHHHHSCCCOBRB21_100balance = int(EFFBSIHHHHHHSCCCOBRB21_100balance) + int(EFFBSIHHHHHHSCCCOBRB21_100balance)
+            EFFBSIHHHHHHSCCCOBRB21_100balance = int(EFFBSIHHHHHHSCCCOBRB21_100balance) + int(howMuchToTransfer)
             if balance < 0:
                 print("You do not have enough money. ")
-                EFFBSIHHHHHHSCCCOBRB21_100balance = int(EFFBSIHHHHHHSCCCOBRB21_100balance) - int(EFFBSIHHHHHHSCCCOBRB21_100balance)
+                EFFBSIHHHHHHSCCCOBRB21_100balance = int(EFFBSIHHHHHHSCCCOBRB21_100balance) - int(howMuchToTransfer)
                 balance = int(balance) + int(howMuchToTransfer)
         if toWhomShouldItBeTransferred == "fifisAcc110":
-            fifisAcc110balance = int(fifisAcc110balance) + int(fifisAcc110balance)
+            fifisAcc110balance = int(fifisAcc110balance) + int(howMuchToTransfer)
             if balance < 0:
                 print("You do not have enough money. ")
-                fifisAcc110balance = int(fifisAcc110balance) - int(fifisAcc110balance)
+                fifisAcc110balance = int(fifisAcc110balance) - int(howMuchToTransfer)
                 balance = int(balance) + int(howMuchToTransfer)
         
 
