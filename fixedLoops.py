@@ -88,13 +88,22 @@
 
 # #attempt 1
 
-# timesTable = int(input("Enter the times table you would like to see: "))
-# howFarItShouldGo = int(input("Enter how far it should go: "))
-# print("This is the " + str(timesTable) + " times table.")
-# for counter1 in range(1, howFarItShouldGo + 1):
-#     print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1) + ".")
+
+# working one
+another = "Y"
+
+while another == "Y":
+    timesTable = int(input("Enter the times table you would like to see: "))
+    howFarItShouldGo = int(input("Enter how far it should go: "))
+    print("This is the " + str(timesTable) + " times table.")
+    for counter1 in range(1, howFarItShouldGo + 1):
+        print(str(counter1) + " times " + str(timesTable) + " equals " + str(timesTable * counter1) + ".")
+    another = input("Would you like another? (Y/N): ")
+print("Goodbye! ")
 
 
+
+# random stuff
 # #attempt 2
 
 # counter33 = 2
@@ -180,20 +189,20 @@
 #         print("I asked you to do one thing...")
 
 
-userSaysNo = input("Please Yes or No to begin: ")
-for counter3 in range(1):
-    if userSaysNo == "Yes":
-        for counter1 in range(1):
-            yesOrNo2 = input("Enter Yes or No: ")
-            if yesOrNo2 == "Yes":
-                print("work pleaseeeee")
-                userSaysNo = input("Enter Yes or No: ")
-            elif yesOrNo2 == "No":
-                print("Sure thing.")
-            else:
-                print("I asked you to do one thing...")
-    elif userSaysNo == "No":
-        print("Okay then, have a nice day!")
+# userSaysNo = input("Please Yes or No to begin: ")
+# for counter3 in range(1):
+#     if userSaysNo == "Yes":
+#         for counter1 in range(1):
+#             yesOrNo2 = input("Enter Yes or No: ")
+#             if yesOrNo2 == "Yes":
+#                 print("work pleaseeeee")
+#                 userSaysNo = input("Enter Yes or No: ")
+#             elif yesOrNo2 == "No":
+#                 print("Sure thing.")
+#             else:
+#                 print("I asked you to do one thing...")
+#     elif userSaysNo == "No":
+#         print("Okay then, have a nice day!")
 
 
 
