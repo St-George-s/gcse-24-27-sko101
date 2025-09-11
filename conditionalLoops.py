@@ -96,12 +96,64 @@
 
 
 
-# extra check balance function because it is an ATM and so otherwise how would you use it
+# # extra check balance function because it is an ATM and so otherwise how would you use it
+# balance = 100
+# dWQ = "yay"
+# while dWQ != "Quit":
+#     dWQ = input("Do you want to Deposit, Withdraw, Quit, or Check Balance? ")
+#     if dWQ == "Deposit":
+#         howMuchDeposit = input("How much do you want to deposit? ")
+#         balance = int(balance) + int(howMuchDeposit)
+#     if dWQ == "Withdraw":
+#         howMuchWithdraw = input("How much do you want to withdraw? ")
+#         balance = int(balance) - int(howMuchWithdraw)
+#         if balance < 0:
+#             print("You do not have enough money. ")
+#             balance = int(balance) + int(howMuchWithdraw)
+#     if dWQ == "Check Balance":
+#         print("Your balance is " + str(balance) + ". ")
+# print("Thank you for using Alina's ATM. Have a nice day!")
 
-dWQ = "yay"
+
+# extra check balance function because it is an ATM and so otherwise how would you use it as well as accounts, passwords and sending each other money and also log out
+
+# Accounts: muskarasAcc90, EFFBSIHHHHHHSCCCOBRB21_100, fifisAcc110
+
+logoutter = "logIn"
+while logoutter == "logda
+    print("Welcome to Alina's ATM.")
+
+muskarasAcc90balance = 90
+EFFBSIHHHHHHSCCCOBRB21_100balance = 100
+fifisAcc110balance = 110
+
+
+account = input("Enter a username: ")
+if account == "muskarasAcc90":
+    balance = muskarasAcc90balance 
+    muskarasAcc90code = input("Enter your passcode: ")
+    while muskarasAcc90code != "90code":
+        balance = muskarasAcc90balance
+        print("Password is incorrect. ")
+        muskarasAcc90code = input("Enter your passcode: ")
+if account == "EFFBSIHHHHHHSCCCOBRB21_100":
+    balance = EFFBSIHHHHHHSCCCOBRB21_100balance
+    EFFBSIHHHHHHSCCCOBRB21_100code = input("Enter your passcode: ")
+    while EFFBSIHHHHHHSCCCOBRB21_100code != "100code":
+        print("Password is incorrect. ")
+        EFFBSIHHHHHHSCCCOBRB21_100code = input("Enter your passcode. ")
+if account == "fifisAcc110":
+    balance = fifisAcc110balance
+    fifisAcc110code = input("Enter your passcode: ")
+    while fifisAcc110code != "110code":
+        print("Password is incorrect. ")
+        fifisAcc110code = input("Enter your passcode: ")
+print("Password accepted. ")
+
+
+dWQ = "it doesn't really matter what I write here"
 while dWQ != "Quit":
-    dWQ = input("Do you want to Deposit, Withdraw, Quit, or Check Balance? ")
-    balance = 100
+    dWQ = input("Do you want to Deposit, Withdraw, Quit, Check Balance, or Log Out? ")
     if dWQ == "Deposit":
         howMuchDeposit = input("How much do you want to deposit? ")
         balance = int(balance) + int(howMuchDeposit)
@@ -113,4 +165,8 @@ while dWQ != "Quit":
             balance = int(balance) + int(howMuchWithdraw)
     if dWQ == "Check Balance":
         print("Your balance is " + str(balance) + ". ")
+    if dWQ == "Log Out":
+        print("Thank you for using Alina's ATM. Have a nice day!")
+    if dWQ == "Quit":
+        logoutter = "logOut"
 print("Thank you for using Alina's ATM. Have a nice day!")
