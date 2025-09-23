@@ -239,7 +239,7 @@ print("Thank you for using Alina's ATM. Have a nice day!")
 
 
 
-#transfer prototype
+# transfer prototype
 
 # if dWQ == "Transfer":
 #         howMuchToTransfer = input("How much would you like to transfer? ")
@@ -249,3 +249,4 @@ print("Thank you for using Alina's ATM. Have a nice day!")
 #         if balance < 0:
 #             print("You do not have enough money. ")
 #             balance = int(muskarasAcc90balance) + int(howMuchToTransfer)
+
