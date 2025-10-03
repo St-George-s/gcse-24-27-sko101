@@ -52,30 +52,45 @@
 #      print("You did not manage to guess it within 6 guesses. ")
 
 
-# Extension task B
-# Username Validation 
-# Write a program that checks if a username is valid based on these rules: 
-# Must be at least 5 characters long. 
-# Cannot contain spaces. 
-# Cannot use any special characters like @, #, $, %, etc.. 
-# After validating, the program should confirm the username is valid or let the user retry. 
-# Extensions: 
-# Include a fixed loop that gives the user 3 chances to create a valid username. 
-# Suggest improvements for an invalid username (e.g., "No spaces allowed!"). 
+# # Extension task B
+# # Username Validation 
+# # Write a program that checks if a username is valid based on these rules: 
+# # Must be at least 5 characters long. 
+# # Cannot contain spaces. 
+# # Cannot use any special characters like @, #, $, %, etc.. 
+# # After validating, the program should confirm the username is valid or let the user retry. 
+# # Extensions: 
+# # Include a fixed loop that gives the user 3 chances to create a valid username. 
+# # Suggest improvements for an invalid username (e.g., "No spaces allowed!"). 
 
-# user_sUsername = "noUsername"
-# goodPassword = False
-# while goodPassword == False:
-#     user_sUsername = input("Please enter a possible username. It must be at least 5 characters long and not contain any spaces or special characters: ")
-#     alphaNumeric = user_sUsername.isalnum()
-#     if ((len(user_sUsername) <= 5) and (alphaNumeric == True)):
-#         print("Yes")
-#     if ((len(user_sUsername) > 5)):
-#         print("No")
+# user_sUsername = "NoUsername"
+# goodPassword = "no"
+# while goodPassword == "no":
+#     user_sUsername = input("Please enter a possible username: ")
+#     if (((len(user_sUsername)) >= 5) and (user_sUsername.isalnum() == True)):
+#         print("Password accepted. ")
+#         goodPassword = "yes"
+#     else:
+#         print("Password not accepted. Try again. ")
 
+# # Extension of Extension Task B
+
+chance = 0
 user_sUsername = "NoUsername"
 goodPassword = "no"
 while goodPassword == "no":
-    user_sUsername = input("Please enter a possible username: ")
-    if (((len(user_sUsername)) <= 5) and (user_sUsername.isalnum() == True)):
+    chance = chance + 1
+    if chance > 2:
+        goodPassword = "failed"
+    user_sUsername = input("Please enter a possible username (5 or over letters and no special characters): ")
+    if (((len(user_sUsername)) >= 5) and (user_sUsername.isalnum() == True)):
         print("Password accepted. ")
+        goodPassword = "yes"
+    if (((len(user_sUsername)) < 5)):
+        print("Your password is too short. ")
+    if (user_sUsername.isalnum() == False):
+        print("Your password contains special characters. ")
+if goodPassword == "failed":
+    print("You have run out of attempts. Try again later. ")
+if goodPassword == "yes":
+    print("Your password has been accepted.")
