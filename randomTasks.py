@@ -20,26 +20,52 @@
 #         isCorrect = True
 # print("You did it!")
 
-# Extension
+# # Extension of Entension Task A
 
-import random
-youDidIt = False
-isCorrect = False
-gameMode = input("Please enter a game mode (Hint/Normal/Hard): ")
-randomNumber = int(random.randint(1, 50))
-while (isCorrect == False):
-    user_sNumber = int(input("Please enter your guess: "))
-    if user_sNumber > randomNumber:
-        print("Too high! ")
-    if user_sNumber < randomNumber:
-        print("Too low! ")
-    if (gameMode == "Hint"):
-        if randomNumber % user_sNumber <= 5:
-             print("The number you are trying to find is within 5. ")
-        else:
-             print("The number you are trying to find is not within 5. ")
-    if user_sNumber == randomNumber:
-            isCorrect = True
-            youDidIt = True
-if youDidIt == True: 
-    print("You did it!")
+# import random
+# loops = 0
+# youDidIt = False
+# isCorrect = False
+# gameMode = input("Please enter a game mode (Hint/Normal/Hard): ")
+# randomNumber = int(random.randint(1, 50))
+# while (isCorrect == False):
+#     loops = loops + 1
+#     user_sNumber = int(input("Please enter your guess: "))
+#     if user_sNumber > randomNumber:
+#         print("Too high! ")
+#     if user_sNumber < randomNumber:
+#         print("Too low! ")
+#     if (gameMode == "Hint"):
+#         if randomNumber % user_sNumber <= 5:
+#              print("The number you are trying to find is within 5. ")
+#         else:
+#              print("The number you are trying to find is not within 5. ")
+#     if (gameMode == "Hard"):
+#         if loops > 5:
+#              isCorrect = True
+#     if user_sNumber == randomNumber:
+#             isCorrect = True
+#             youDidIt = True
+# if youDidIt == True: 
+#     print("You did it!")
+# if youDidIt != True:
+#      print("You did not manage to guess it within 6 guesses. ")
+
+
+# Extension task B
+# Username Validation 
+# Write a program that checks if a username is valid based on these rules: 
+# Must be at least 5 characters long. 
+# Cannot contain spaces. 
+# Cannot use any special characters like @, #, $, %, etc.. 
+# After validating, the program should confirm the username is valid or let the user retry. 
+# Extensions: 
+# Include a fixed loop that gives the user 3 chances to create a valid username. 
+# Suggest improvements for an invalid username (e.g., "No spaces allowed!"). 
+
+
+user_sUsername = input("Please enter a possible username. It must be at least 5 characters long and not contain any spaces or special characters: ")
+
+alphaNumeric = user_sUsername.isalnum()
+if (str(user_sUsername) <= len(5)) and (alphaNumeric == True):
+    print("Yes")
