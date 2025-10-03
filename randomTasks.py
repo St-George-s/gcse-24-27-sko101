@@ -63,9 +63,19 @@
 # Include a fixed loop that gives the user 3 chances to create a valid username. 
 # Suggest improvements for an invalid username (e.g., "No spaces allowed!"). 
 
+# user_sUsername = "noUsername"
+# goodPassword = False
+# while goodPassword == False:
+#     user_sUsername = input("Please enter a possible username. It must be at least 5 characters long and not contain any spaces or special characters: ")
+#     alphaNumeric = user_sUsername.isalnum()
+#     if ((len(user_sUsername) <= 5) and (alphaNumeric == True)):
+#         print("Yes")
+#     if ((len(user_sUsername) > 5)):
+#         print("No")
 
-user_sUsername = input("Please enter a possible username. It must be at least 5 characters long and not contain any spaces or special characters: ")
-
-alphaNumeric = user_sUsername.isalnum()
-if (str(user_sUsername) <= len(5)) and (alphaNumeric == True):
-    print("Yes")
+user_sUsername = "NoUsername"
+goodPassword = "no"
+while goodPassword == "no":
+    user_sUsername = input("Please enter a possible username: ")
+    if (((len(user_sUsername)) <= 5) and (user_sUsername.isalnum() == True)):
+        print("Password accepted. ")
