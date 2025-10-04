@@ -86,7 +86,7 @@ while goodPassword == "no":
     if (((len(user_sUsername)) >= 5) and (user_sUsername.isalnum() == True)):
         print("Password accepted. ")
         goodPassword = "yes"
-    if (((len(user_sUsername)) < 5)):
+    elif (((len(user_sUsername)) < 5)):
         print("Your password is too short. ")
     if (user_sUsername.isalnum() == False):
         print("Your password contains special characters. ")
@@ -94,3 +94,13 @@ if goodPassword == "failed":
     print("You have run out of attempts. Try again later. ")
 if goodPassword == "yes":
     print("Your password has been accepted.")
+
+
+# Word Guesser 
+# The program selects a random word from a list (e.g., ["apple", "banana", "grape"]). The user must guess the letters in the word. After each guess, the program: 
+# Updates and shows the current state of the word (e.g., _ p p _ _). 
+# Shows the incorrect guesses and how many guesses are left. 
+# Extensions: 
+# Do not penalise the user for repeating a letter they've already guessed. 
+# Add a "hint mode" that reveals one letter from the word. 
+
