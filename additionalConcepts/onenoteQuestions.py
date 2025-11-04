@@ -22,21 +22,31 @@
 # else:
 #     print("It is not a palindrome. ")
 
-# 4: Write a Python program to count the number of vowels in a string. 
-userNewString = input("Enter a new sentence: ")
-vowels = ["a", "e", "i", "o", "u"]
-vowelsInWord = 0
-for character in userNewString:
-    if character == vowels[character]:
-        vowelsInWord = vowelsInWord + 1
-if vowelsInWord > 0:
-    print("There are ", str(vowelsInWord), " vowels in your sentence. ")
-else:
-    print("There are no vowels in your sentence. ")
-
+# # 4: Write a Python program to count the number of vowels in a string. 
+# userNewString = input("Enter a new sentence: ")
+# vowels = ["a", "e", "i", "o", "u"]
+# vowelsInWord = 0
 # for character in userNewString:
-#     if userNewString[character] == vowels:
-#         vowelsInWord = vowelsInWord + 1
+#     for counter in range(5):
+#         if character == vowels[counter]:
+#             vowelsInWord = vowelsInWord + 1
+# if vowelsInWord > 0:
+#     print("There are ", str(vowelsInWord), " vowels in your sentence. ")
+# else:
+#     print("There are no vowels in your sentence. ")
+
+
+# 5: Write a Python program to replace all spaces in a string with underscores (_).
+evenNewerString = input("Enter a newer sentence: ")
+space = " "
+for character in evenNewerString:
+    if character == space:
+        print("Yes")
+    else:
+        print("No")
+
+# unfinished
+
 
 # # 6: Generate and print one random integer from 1 to 6. 
 # import random
