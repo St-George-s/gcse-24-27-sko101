@@ -75,25 +75,25 @@
 
 # # Extension of Extension Task B
 
-chance = 0
-user_sUsername = "NoUsername"
-goodPassword = "no"
-while goodPassword == "no":
-    chance = chance + 1
-    if chance > 2:
-        goodPassword = "failed"
-    user_sUsername = input("Please enter a possible username (5 or over letters and no special characters): ")
-    if (((len(user_sUsername)) >= 5) and (user_sUsername.isalnum() == True)):
-        print("Password accepted. ")
-        goodPassword = "yes"
-    elif (((len(user_sUsername)) < 5)):
-        print("Your password is too short. ")
-    if (user_sUsername.isalnum() == False):
-        print("Your password contains special characters. ")
-if goodPassword == "failed":
-    print("You have run out of attempts. Try again later. ")
-if goodPassword == "yes":
-    print("Your password has been accepted.")
+# chance = 0
+# user_sUsername = "NoUsername"
+# goodPassword = "no"
+# while goodPassword == "no":
+#     chance = chance + 1
+#     if chance > 2:
+#         goodPassword = "failed"
+#     user_sUsername = input("Please enter a possible username (5 or over letters and no special characters): ")
+#     if (((len(user_sUsername)) >= 5) and (user_sUsername.isalnum() == True)):
+#         print("Password accepted. ")
+#         goodPassword = "yes"
+#     elif (((len(user_sUsername)) < 5)):
+#         print("Your password is too short. ")
+#     if (user_sUsername.isalnum() == False):
+#         print("Your password contains special characters. ")
+# if goodPassword == "failed":
+#     print("You have run out of attempts. Try again later. ")
+# if goodPassword == "yes":
+#     print("Your password has been accepted.")
 
 
 # Word Guesser 
@@ -104,3 +104,21 @@ if goodPassword == "yes":
 # Do not penalise the user for repeating a letter they've already guessed. 
 # Add a "hint mode" that reveals one letter from the word. 
 
+
+
+# Extension Task J
+# Mor-se Coding   
+# Create a program that allows you to enter a string and encode it into Morse code, using   ‘ . ‘ and ‘ - ‘ notation. Spaces between words should be replaced with the “|” (pipe) character.  
+# Use a normal space for gaps between each character. 
+# Optional Extensions:  
+# Develop your program to translate from Morse to alphanumeric, using the standards above 
+
+user_sSentence = input("Enter a sentence: ")
+user_sSentence.upper()
+standardAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W,", "X", "Y", "Z", " ", ". "]
+morseAlphabet = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", " ", " | "]
+for counter1 in range(len(user_sSentence)):
+    for counter2 in range(0, 28):
+        if user_sSentence[counter1] == standardAlphabet[counter2]:
+            user_sSentence[counter1] = morseAlphabet[counter2]
+print(user_sSentence)
