@@ -96,46 +96,86 @@
 #     print("Your password has been accepted.")
 
 
-# Extension Task C
-# Word Guesser 
-# The program selects a random word from a list (e.g., ["apple", "banana", "grape"]). The user must guess the letters in the word. After each guess, the program: 
-# Updates and shows the current state of the word (e.g., _ p p _ _). 
-# Shows the incorrect guesses and how many guesses are left. 
-# Extensions: 
-# Do not penalise the user for repeating a letter they've already guessed. 
-# Add a "hint mode" that reveals one letter from the word. 
+# # Extension Task C
+# # Word Guesser 
+# # The program selects a random word from a list (e.g., ["apple", "banana", "grape"]). The user must guess the letters in the word. After each guess, the program: 
+# # Updates and shows the current state of the word (e.g., _ p p _ _). 
+# # Shows the incorrect guesses and how many guesses are left. 
+# # Extensions: 
+# # Do not penalise the user for repeating a letter they've already guessed. 
+# # Add a "hint mode" that reveals one letter from the word. 
+
+# import random
+# wordNumber = random.randint(0, 2)
+# wordList = ["apple", "banana", "grape"]
+# chosenWord = wordList[wordNumber]
+# output = " "
+# incorrectGuesses = 0
+# while incorrectGuesses < 5:
+#     letterGuessed = input("Enter a letter: ")
+#     for counter in range(len(chosenWord)):
+#         if letterGuessed == chosenWord[counter]:
+#             print("yes")
+#             # ouput = str(output) + str(letterGuessed)
+#             # print(output)
+#         else:
+#             incorrectGuesses = incorrectGuesses + 1
+#             print("no")
+
+
+# # Extension Task J
+# # Mor-se Coding   
+# # Create a program that allows you to enter a string and encode it into Morse code, using   ‘ . ‘ and ‘ - ‘ notation. Spaces between words should be replaced with the “|” (pipe) character.  
+# # Use a normal space for gaps between each character. 
+# # Optional Extensions:  
+# # Develop your program to translate from Morse to alphanumeric, using the standards above 
+
+# # Not fixed by teacher
+# user_sSentence = input("Enter a sentence: ")
+# user_sSentence.upper()
+# standardAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W,", "X", "Y", "Z", " ", ". "]
+# morseAlphabet = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", " ", " | "]
+# for counter1 in range(len(user_sSentence)):
+#     for counter2 in range(0, 28):
+#         if user_sSentence[counter1] == standardAlphabet[counter2]:
+#             user_sSentence[counter1] = morseAlphabet[counter2]
+# print(user_sSentence)
+
+# # Fixed by teacher
+# alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M",
+#             "N","O","P","Q","R","S","T","U","V","W","X","Y","Z"," "]
+# morse = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
+#          ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-",
+#          ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--",
+#          "--..", "|"]   # pipe replaces spaces between words
+# sentence = input("Enter a sentence: ").upper()
+# output = ""
+# for letter in sentence:
+#     found = False
+#     for counter in range(len(alphabet)):
+#         if letter == alphabet[counter]:
+#             output = output + morse[counter] + " "
+#             found = True
+#             break    # stop searching once matched
+#     if found == False:
+#         output = output + "? "   # for unknown characters
+# print(output)
+
+
+# Extension Task F 
+# Mastermind 
+# Generate a random four digit number.
+# The player has to keep inputting four digit numbers until they guess the randomly generated number.
+# After each unsuccessful try it should say how many numbers they got correct, but not which position they got right.
+# At the end of the game should congratulate the user and say how many tries it took. 
+# Optional Extensions:  
+# Let the user pick an easy mode which shows the user which position that they guessed correctly 
+# Let the user pick a hard mode that gives five digits instead of four 
+# After the game is finished, ask the user for their name and input their score into a table.
+# Show them the high score at the start of the game so that it gives a sense of competition. 
 
 import random
-wordNumber = random.randint(0, 2)
-wordList = ["apple", "banana", "grape"]
-chosenWord = wordList[wordNumber]
-output = " "
-incorrectGuesses = 0
-while incorrectGuesses < 5:
-    letterGuessed = input("Enter a letter: ")
-    for counter in range(len(chosenWord)):
-        if letterGuessed == chosenWord[counter]:
-            print("yes")
-            # ouput = str(output) + str(letterGuessed)
-            # print(output)
-        else:
-            incorrectGuesses = incorrectGuesses + 1
-            print("no")
-
-
-# Extension Task J
-# Mor-se Coding   
-# Create a program that allows you to enter a string and encode it into Morse code, using   ‘ . ‘ and ‘ - ‘ notation. Spaces between words should be replaced with the “|” (pipe) character.  
-# Use a normal space for gaps between each character. 
-# Optional Extensions:  
-# Develop your program to translate from Morse to alphanumeric, using the standards above 
-
-user_sSentence = input("Enter a sentence: ")
-user_sSentence.upper()
-standardAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W,", "X", "Y", "Z", " ", ". "]
-morseAlphabet = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", " ", " | "]
-for counter1 in range(len(user_sSentence)):
-    for counter2 in range(0, 28):
-        if user_sSentence[counter1] == standardAlphabet[counter2]:
-            user_sSentence[counter1] = morseAlphabet[counter2]
-print(user_sSentence)
+randomNumber = str(random.randint(1, 1000))
+while len(randomNumber) > 4:
+    randomNumber = str(str("0") + str(randomNumber))
+print(randomNumber)
