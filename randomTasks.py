@@ -184,37 +184,63 @@
 # The Hangman One
 
 # import random
-# number = random.randint(0, 1)
-# wordList = ["hello", "bye"]
-# word = wordList[number]
-# unguessedWord = ""
-# for counter1 in range(int(len(word))):
-#     unguessedWord = unguessedWord + "_"
-# incorrectLetters = ""
-# lettersAfter = ""
-# numberOfGuesses = 5
-# numberOfGuessesLeft = numberOfGuesses
-# for counter2 in range(numberOfGuesses):
-#     if unguessedWord != word:
-#         guess = input("Enter your guess: ")
-#         guess = guess.lower()
-#         for counter3 in range(len(word)):
-#             if guess == word[counter3]:
-#                 unguessedWord = unguessedWord[0:counter3] + guess + unguessedWord[counter3+1:]
-#                 print(unguessedWord)
-#         numberOfGuessesLeft = numberOfGuessesLeft - 1
-#         print("You have " + str(numberOfGuessesLeft) + " guesses left. ")
-# if unguessedWord == word:
-#     print("You win! ")
-#     print("The word was " + word + ". ")
-#     print("It took you " + str(numberOfGuesses - numberOfGuessesLeft) + " guesses. ")
-# else:
-#     print("You ran out of guesses. ")
-#     print("The word was " + word + ". ")
+# wantToContinue = "Y"
+# print("Welcome to this hangman game. ")
+# while wantToContinue == "Y":
+#     number = random.randint(0, 1)
+#     wordList = ["hello", "bye"]
+#     word = wordList[number]
+#     unguessedWord = ""
+#     for counter1 in range(int(len(word))):
+#         unguessedWord = unguessedWord + "_"
+#     incorrectLetters = ""
+#     lettersAfter = ""
+#     numberOfGuesses = 5
+#     numberOfGuessesLeft = numberOfGuesses
+#     guessedLetters = ""
+#     numberOfIncorrectGuesses = 0
+#     for counter2 in range(numberOfGuesses):
+#         if unguessedWord != word:
+#             found = False
+#             guess = input("Enter your guess: ")
+#             guess = guess.lower()
+#             for counter3 in range(len(word)):
+#                 if guess == word[counter3]:
+#                     unguessedWord = unguessedWord[0:counter3] + guess + unguessedWord[counter3+1:]
+#                     print(unguessedWord)
+#                     found = True
+#             if found == False:
+#                 if numberOfIncorrectGuesses == 0:
+#                     guessedLetters = guess
+#                 else:
+#                     guessedLetters = guessedLetters + ", " + guess
+#                 numberOfIncorrectGuesses = numberOfIncorrectGuesses + 1
+#             if numberOfIncorrectGuesses == 0:
+#                 print("There are no incorrectly guessed letters. ")
+#             else:
+#                 print("Your incorrectly guessed letters are " + guessedLetters + ". ")
+
+#             numberOfGuessesLeft = numberOfGuessesLeft - 1
+#             print("You have " + str(numberOfGuessesLeft) + " guesses left. ")
+#     if unguessedWord == word:
+#         print("You win! ")
+#         print("The word was " + word + ". ")
+#         print("It took you " + str(numberOfGuesses - numberOfGuessesLeft) + " guesses. ")
+#         print("Your incorrectly guessed letters were " + guessedLetters + ". ")
+#     else:
+#         print("You ran out of guesses. ")
+#         print("The word was " + word + ". ")
+#         print("Your incorrectly guessed letters were " + guessedLetters + ". ")
+#     wantToContinue = input("Would you like to play again? Y/N: ")
+# print("Bye! Thank you for playing. ")
+
+
 
 import random
 wantToContinue = "Y"
-print("Welcome to this hangman game. The rules are the rules. ")
+print("Welcome to this hangman game. ")
+print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
+print("Settings: ")
 while wantToContinue == "Y":
     number = random.randint(0, 1)
     wordList = ["hello", "bye"]
@@ -227,24 +253,62 @@ while wantToContinue == "Y":
     numberOfGuesses = 5
     numberOfGuessesLeft = numberOfGuesses
     guessedLetters = ""
-    for counter2 in range(numberOfGuesses):
+    correctlyGuessedLetters = ""
+    numberOfIncorrectGuesses = 0
+    reGuessOverOne = 0
+    notLoseLifeAfterReGuessing = input("Would you like to not lose a life if you guess a letter you already guessed? Y/N: ")
+    notLoseLifeAfterCorrectGuess = input("Would you like to not lose a life if you guess a correct letter? Y/N: ")
+    
+    while numberOfGuessesLeft > 0:
         if unguessedWord != word:
+            found = False
+            print("______________________________________")
             guess = input("Enter your guess: ")
+            print("______________________________________")
             guess = guess.lower()
             for counter3 in range(len(word)):
                 if guess == word[counter3]:
                     unguessedWord = unguessedWord[0:counter3] + guess + unguessedWord[counter3+1:]
-                    print(unguessedWord)
+    
+                    found = True
+                    correctlyGuessedLetters = correctlyGuessedLetters + guess
+                    if notLoseLifeAfterCorrectGuess == "N":
+                        numberOfGuessesLeft = numberOfGuessesLeft - 1
+            print(unguessedWord)
+            if found == False:
 
-
-
-        else:
-            guessedLetters = guessedLetters + ", " + guess
-            print("Your incorrectly guessed letters are" + guessedLetters + ". ")
-
-
+                for counter6 in range(len(guessedLetters)):
+                    if guess == guessedLetters[counter6]:
+                        guessedLetters = guessedLetters[0:counter6-2] + "" + guessedLetters[counter6+1:]
+                        numberOfIncorrectGuesses = numberOfIncorrectGuesses - 1
+                        reGuessOverOne = reGuessOverOne + 1
+                        if notLoseLifeAfterReGuessing == "Y" and reGuessOverOne == 1:
+                            numberOfGuessesLeft = numberOfGuessesLeft + 1
+                            print("You already guessed " + guess + ". ")
+                if numberOfIncorrectGuesses == 0:
+                    guessedLetters = guess
+                else:
+                    guessedLetters = guessedLetters + ", " + guess
+                numberOfIncorrectGuesses = numberOfIncorrectGuesses + 1
+            else:
+                if notLoseLifeAfterReGuessing == "Y":
+                    for counter4 in range(len(correctlyGuessedLetters)):
+                        if guess == correctlyGuessedLetters[counter4]:
+                            reGuessOverOne = reGuessOverOne + 1
+                            if notLoseLifeAfterCorrectGuess == "Y":
+                                numberOfGuessesLeft = numberOfGuessesLeft + 1
             
-            numberOfGuessesLeft = numberOfGuessesLeft - 1
+                if reGuessOverOne > 1:
+                    print("You already guessed " + guess + ". ")
+            
+            reGuessOverOne = 0
+
+
+
+            if numberOfIncorrectGuesses == 0:
+                print("There are no incorrectly guessed letters. ")
+            else:
+                print("Your incorrectly guessed letters are " + guessedLetters + ". ")
             print("You have " + str(numberOfGuessesLeft) + " guesses left. ")
     if unguessedWord == word:
         print("You win! ")
@@ -256,4 +320,9 @@ while wantToContinue == "Y":
         print("The word was " + word + ". ")
         print("Your incorrectly guessed letters were " + guessedLetters + ". ")
     wantToContinue = input("Would you like to play again? Y/N: ")
+    if wantToContinue == "Y":
+        print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
 print("Bye! Thank you for playing. ")
+
+
+# if double letter it says you already guessed it
