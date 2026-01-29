@@ -1,0 +1,23 @@
+
+# Extension of Extension Task B
+
+chance = 0
+user_sUsername = "NoUsername"
+goodPassword = "no"
+while goodPassword == "no":
+    chance = chance + 1
+    if chance > 2:
+        goodPassword = "failed"
+    user_sUsername = input("Please enter a possible username (5 or over letters and no special characters): ")
+    if (((len(user_sUsername)) >= 5) and (user_sUsername.isalnum() == True)):
+        print("Password accepted. ")
+        goodPassword = "yes"
+    elif (((len(user_sUsername)) < 5)):
+        print("Your password is too short. ")
+    if (user_sUsername.isalnum() == False):
+        print("Your password contains special characters. ")
+if goodPassword == "failed":
+    print("You have run out of attempts. Try again later. ")
+if goodPassword == "yes":
+    print("Your password has been accepted.")
+
