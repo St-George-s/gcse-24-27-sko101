@@ -7,10 +7,11 @@ numberOfIncorrectGuesses = 0
 wantToContinue = "Y"
 numberOfGuesses = 5
 
+# Initial setup of the hangman game
 def setUp():
     print("Welcome to this hangman game. ") 
 
-
+# Get random word from pre defined list and create blank corresponding string
 def getRandomWordAndBlankString():
     number = random.randint(0, 1)
     wordList = ["hello", "bye"]
@@ -21,27 +22,28 @@ def getRandomWordAndBlankString():
         blankString = blankString + "_"
     return randomWord, blankString
 
-
+# Allow user to pick game settings
 def pickGameSettings():
-    message = "This is automatically off. "
-    message2 = "This is automatically on. "
+    # message = "This is automatically off. "
+    # message2 = "This is automatically on. "
 
-        # Allows the user to change their settings.
-    print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
-    if timesPlayed > 0:
-        message = "Your settings are currently the same as last round. "
-    changeSettings = input("Would you like to change your settings? Y/N: ")
-    if changeSettings == "Y":
-        print("______________________________________")
-        print("Your settings will remain the same if you play another round. ")
-        print("______________________________________")
-        print("Recommended Settings: \n - N  \n - Y ")
-        print("______________________________________")
-        loseLetterAfterCorrectGuess = input("- Would you like to lose guesses after guessing correctly? " + message + "(" + (str(loseLetterAfterCorrectGuess)) + ") " + "Y/N: ")
-        loseLetterAfterGuessingAgain = input("- Would you like to lose guesses after guessing a letter you have guessed before? " + message2 + "(" + (str(loseLetterAfterGuessingAgain)) + ") " + "Y/N: ")
-        print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
-    if changeSettings == "N":
-        print("______________________________________")
+    #     # Allows the user to change their settings.
+    # print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
+    # if timesPlayed > 0:
+    #     message = "Your settings are currently the same as last round. "
+    # changeSettings = input("Would you like to change your settings? Y/N: ")
+    # if changeSettings == "Y":
+    #     print("______________________________________")
+    #     print("Your settings will remain the same if you play another round. ")
+    #     print("______________________________________")
+    #     print("Recommended Settings: \n - N  \n - Y ")
+    #     print("______________________________________")
+    #     loseLetterAfterCorrectGuess = input("- Would you like to lose guesses after guessing correctly? " + message + "(" + (str(loseLetterAfterCorrectGuess)) + ") " + "Y/N: ")
+    #     loseLetterAfterGuessingAgain = input("- Would you like to lose guesses after guessing a letter you have guessed before? " + message2 + "(" + (str(loseLetterAfterGuessingAgain)) + ") " + "Y/N: ")
+    #     print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
+    # if changeSettings == "N":
+    #     print("______________________________________")
+    pass
 
 def getUserGuesses(randomWord, blankString):
     everyGuessedLetter = []
@@ -87,7 +89,7 @@ getRandomWordAndBlankString()
 pickGameSettings()
 
 # Loops and asks the user to guess for the number of guesses they have left.
-while numberOfGuesses != 0 and blankString != word:
+while numberOfGuesses != 0 and blankString != randomWord:
     blankString, everyGuessedLetter, userLetterGuess, letterInRanWordCounter, letterInRanWord = getUserGuesses(randomWord, blankString)
     # checkForDoubleLetter(everyGuessedLetter, userLetterGuess, letterInRanWordCounter)
     addIncorrectGuessesToArray(everyGuessedLetter, letterInRanWord, userLetterGuess)
