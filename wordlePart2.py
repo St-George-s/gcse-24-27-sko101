@@ -24,6 +24,7 @@ print(correctLetters)
 incorrectLetters = wordGuessed
 no = 0
 
+# Removes the matching letters from the word to create a variable containing the incorrect letters.
 for counter in range(len(wordGuessed)):
     for counter2 in range(len(correctLetters)):
         if wordGuessed[counter] == correctLetters[counter2]:
