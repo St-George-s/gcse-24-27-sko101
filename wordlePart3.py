@@ -46,12 +46,14 @@ def removeLetterFromKeyboard(keyboard, keyboardLine2, keyboardLine3, incorrectLe
 exampleWord = "swoop"
 display = "1:   "
 wordGuessed = ""
+wordGuessedWithoutIncorrectLetters = wordGuessed
 wordHasBeenGuessed = False
 keyboard = "q w e r t y u i o p"
 keyboardLine2 = " a s d f g h j k l"
 keyboardLine3 = "   z x c v b n m"
 correctLetters = ""
 incorrectLetters = ""
+
 
 
 
@@ -62,16 +64,23 @@ print("Welcome to Wordle. Please try to guess a word with 5 letters. ")
 display, wordGuessed = userGuessesAWord(wordGuessed, wordHasBeenGuessed, exampleWord, display)
 # wordGuessed, exampleWord, correctLetters, incorrectLetters, keyboard, keyboardLine2, keyboardLine3 = removeIncorrectLettersFromKeyboard(wordGuessed, exampleWord, correctLetters, incorrectLetters, keyboard, keyboardLine2, keyboardLine3)
 
-
+# Finds incorrect letters and removes them from the displayed keyboard.
 wordGuessed = wordGuessed.lower()
 incorrectLetters = set(wordGuessed) - set(exampleWord)
 wordGuessed = wordGuessed.upper()
 incorrectLettersAsAString = " ".join(str(item) for item in incorrectLetters)
 keyboard, keyboardLine2, keyboardLine3, incorrectLetters = removeLetterFromKeyboard(keyboard, keyboardLine2, keyboardLine3, incorrectLettersAsAString)
 
-
-
-
+# # Adjusts Display to remove incorrect words.
+# wordGuessed = wordGuessed.lower()
+# display = display.lower()
+# # for counter in range(len(wordGuessed)):
+# #     wordGuessedWithoutIncorrectLetters = wordGuessedWithoutIncorrectLetters + " "
+# for counter in range(len(wordGuessed)):
+#     for counter1 in range(len(incorrectLettersAsAString)):
+#         if wordGuessed[counter] == incorrectLettersAsAString[counter1]:
+#             wordGuessedWithoutIncorrectLetters = wordGuessedWithoutIncorrectLetters[0:counter] + "_" + wordGuessedWithoutIncorrectLetters[counter+1:]
+# display = display[0:5] + wordGuessedWithoutIncorrectLetters + "   -   (" + wordGuessed + ")"
 
 
 
