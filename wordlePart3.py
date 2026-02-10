@@ -16,36 +16,25 @@ def userGuessesAWord(wordGuessed, wordHasBeenGuessed, exampleWord, display):
     return display, wordGuessed
 
 
-
-# Removes incorrect letters from the visible keyboard.
-def removeIncorrectLettersFromKeyboard(wordGuessed, exampleWord, correctLetters, incorrectLetters, keyboard, keyboardLine2, keyboardLine3):
-    # Searches words for matching letters.
-    for counter in range(len(wordGuessed)):
-        for counter2 in range(len(exampleWord)):
-            if wordGuessed[counter] == exampleWord[counter2]:
-                correctLetters = correctLetters + wordGuessed[counter]
-    # Removes the matching letters from the word to create a variable containing the incorrect letters.
-    for counter in range(len(wordGuessed)):
-        for counter2 in range(len(correctLetters)):
-            if wordGuessed[counter] == correctLetters[counter2]:
-                incorrectLetters = incorrectLetters[0:counter] + " " + incorrectLetters[counter+1:]
-    # Removes the guessed letter from the displayed keyboard if incorrect.
+# Removes the guessed letter from the displayed keyboard if incorrect.
+def removeLetterFromKeyboard(keyboard, keyboardLine2, keyboardLine3, incorrectLettersAsAString):
     # Checks line 1 for the letter.
-    for counter in range(len(incorrectLetters)):
+    for counter in range(len(incorrectLettersAsAString)):
         for counter1 in range(len(keyboard)):
-            if incorrectLetters[counter] == keyboard[counter1]:
+            if incorrectLettersAsAString[counter] == keyboard[counter1]:
                 keyboard = keyboard[0:counter1] + " " + keyboard[counter1+1:]
     # Checks line 2 for the letter.
-    for counter in range(len(incorrectLetters)):
+    for counter in range(len(incorrectLettersAsAString)):
         for counter1 in range(len(keyboardLine2)):
-            if incorrectLetters[counter] == keyboardLine2[counter1]:
+            if incorrectLettersAsAString[counter] == keyboardLine2[counter1]:
                 keyboardLine2 = keyboardLine2[0:counter1] + " " + keyboardLine2[counter1+1:]
     # Checks line 3 for the letter.
-    for counter in range(len(incorrectLetters)):
+    for counter in range(len(incorrectLettersAsAString)):
         for counter1 in range(len(keyboardLine3)):
-            if incorrectLetters[counter] == keyboardLine3[counter1]:
+            if incorrectLettersAsAString[counter] == keyboardLine3[counter1]:
                 keyboardLine3 = keyboardLine3[0:counter1] + " " + keyboardLine3[counter1+1:]
-    return wordGuessed, exampleWord, correctLetters, incorrectLetters, keyboard, keyboardLine2, keyboardLine3
+    return keyboard, keyboardLine2, keyboardLine3, incorrectLettersAsAString
+
 
 
 
@@ -62,7 +51,7 @@ keyboard = "q w e r t y u i o p"
 keyboardLine2 = " a s d f g h j k l"
 keyboardLine3 = "   z x c v b n m"
 correctLetters = ""
-incorrectLetters = wordGuessed
+incorrectLetters = ""
 
 
 
@@ -71,7 +60,18 @@ incorrectLetters = wordGuessed
 print("Welcome to Wordle. Please try to guess a word with 5 letters. ")
 
 display, wordGuessed = userGuessesAWord(wordGuessed, wordHasBeenGuessed, exampleWord, display)
-wordGuessed, exampleWord, correctLetters, incorrectLetters, keyboard, keyboardLine2, keyboardLine3 = removeIncorrectLettersFromKeyboard(wordGuessed, exampleWord, correctLetters, incorrectLetters, keyboard, keyboardLine2, keyboardLine3)
+# wordGuessed, exampleWord, correctLetters, incorrectLetters, keyboard, keyboardLine2, keyboardLine3 = removeIncorrectLettersFromKeyboard(wordGuessed, exampleWord, correctLetters, incorrectLetters, keyboard, keyboardLine2, keyboardLine3)
+
+
+wordGuessed = wordGuessed.lower()
+incorrectLetters = set(wordGuessed) - set(exampleWord)
+wordGuessed = wordGuessed.upper()
+incorrectLettersAsAString = " ".join(str(item) for item in incorrectLetters)
+keyboard, keyboardLine2, keyboardLine3, incorrectLetters = removeLetterFromKeyboard(keyboard, keyboardLine2, keyboardLine3, incorrectLettersAsAString)
+
+
+
+
 
 
 
@@ -81,7 +81,3 @@ print("")
 print(keyboard)
 print(keyboardLine2)
 print(keyboardLine3)
-
-
-
-
