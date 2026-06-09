@@ -1,0 +1,49 @@
+# authorised = [True, True, False]
+# searchValue = input("Search here (True/False): ")
+# if searchValue == "True":
+#     searchValue = True
+# else:
+#     searchValue = False
+# found = False
+# index = 0
+
+# while not found and index < len(authorised):
+#     if searchValue == authorised[index]:
+#         found = True
+#     else:
+#         index += 1
+# # After the loop (unindent)
+# if found:
+#     print("(First) Found at index " + str(index) + ". ")
+# else:
+#     print("Not found. ")
+
+
+
+
+def linearSearch(searchValue, authorised):
+    index = 0
+    found = False
+    while not found and index < len(authorised):
+        if searchValue == authorised[index]:
+            found = True
+        else:
+            index += 1
+    return found, index
+index = 0
+searchValue = input("Search here (True/False): ")
+if searchValue == "True":
+    searchValue = True
+else:
+    searchValue = False
+authorised = [True, True, False, True]
+names = ["Debbie", "Jessie", "Vigdis", "Emilia"]
+found, index = linearSearch(searchValue, authorised)
+
+
+# After the function
+if found:
+    print("(First) Found at " + str(index) + ". ")
+    print("Student is " + str(names[index]) + ". ")
+else:
+    print("Not found. ")
