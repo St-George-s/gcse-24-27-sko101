@@ -8,7 +8,7 @@ grid = [
 
 def print_grid(grid):
     for counter in range(len(grid)):
-        for counter in range(len(grid))
-        print(grid[counter][0], grid[counter][1], grid[counter][2])
-
+        for counter in range(len(grid)):
+            print(grid[counter][0], grid[counter][1], grid[counter][2])
+        break
 print_grid(grid)
